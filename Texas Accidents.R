@@ -23,7 +23,6 @@ library(ggthemes)
 library(Sleuth3)
 library(mosaic)
 
-#### Group 11 - Blake Battle, Roland Cadotte, Ben Gartmann, Marcy Kent, Charlotte Sweed, Theo Thomas ####
 
 # change to your own location
 input_path <- "C:\\Users\\benga\\OneDrive\\Desktop\\Masters Stuff\\BUAN 6356\\Group Project\\TX_Accidents_Dec20.csv"
@@ -515,7 +514,7 @@ tx_accidents <- input
 # PreProcessing ----
 ## Unneeded columns ----
 # Index unneeded columns
-not_useful <- c("ï..ID", 
+not_useful <- c("Ã¯..ID", 
                 "Source", 
                 "End_Lat", 
                 "End_Lng",
