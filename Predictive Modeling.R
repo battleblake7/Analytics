@@ -3,10 +3,10 @@ rm(list=ls())
 cat("\014")
 
 # 1 (a) read in bank.csv into data.frame
-setwd("/Users/ShujingSun/Dropbox/JSOM_Teaching/2021_Spring/Assignment/hw2/")
+setwd
 b <- read.csv("bank.csv")
 # examine b
-str(b)  # you should have a data.frame with 4,521 observations and 17 variables
+str(b)  
 
 # 1 (b) convert to factors
 b$job <- as.factor(b$job)
