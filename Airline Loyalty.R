@@ -1,18 +1,15 @@
-######## HW 3 Solution ######## 
+
 # Clear the workspace
 rm(list=ls())
 cat("\014")
 library(ggplot2)
 library(cluster)
 # set working directory
-setwd("/Users/ShujingSun/Dropbox/JSOM_Teaching/2021_Spring/Assignment/hw3/")  
+setwd
 
-###### 1. Load & Normalize the Data ###### 
-# load in the data file into data.frame
+
 df <- read.csv(file='AirlineLoyalty.csv', stringsAsFactors = FALSE)
-# check whether there are any missing data
 summary(df)
-# normalize the data for all columns, except "ID" & "Award"
 df.norm <- df[, -c(1,12)]  
 df.norm <- data.frame(sapply(df.norm, scale))
 
@@ -33,7 +30,7 @@ df$cluster_hc <- as.character(cutree(hcluster.out, k = 3))
 set.seed(123)
 
 # 2.1 Choosing k using the "elbow plot" 
-choosek <- data.frame(matrix(ncol = 2, nrow = 0))  #create an empty dataframe with two columns
+choosek <- data.frame(matrix(ncol = 2, nrow = 0)) 
 colnames(choosek) <- c("numClusters", "avgWithinSS")
 for (k in 2:10) {
   tempkm <- kmeans(df.norm, centers = k, nstart = 10)  
@@ -47,7 +44,7 @@ rm(choosek, tempdf, tempkm)
 
 
 ###### 4. Compare Clustering Results and Label Clusters ###### 
-# 4.1 Set k=3, build the cluster using kmeans
+
 km.out <- kmeans(df.norm, centers = 3, nstart = 10) 
 # append the cluster label to df
 df$cluster_km <- as.character(km.out$cluster)
